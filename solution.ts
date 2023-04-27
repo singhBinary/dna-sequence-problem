@@ -1,5 +1,5 @@
 // TypeScript function to find all 10-letter-long sequences that occur more than once in a DNA molecule
-function findRepeatedDnaSequences(s: string): string[] {
+function dnaSequence(s: string): string[] {
     // Initialize an empty map to store the count of each 10-letter-long sequence
     const sequenceCount: Map<string, number> = new Map();
 
@@ -33,12 +33,12 @@ const testCases: [string, string[]][] = [
     ["AAAAAAAAAAAAA", ["AAAAAAAAAA"]],
     ["ACGAATTCCGACGAATTCCG", ["ACGAATTCCG"]],
     ["ACGTACGTACGTACGT", ["ACGTACGTAC", "CGTACGTACG", "GTACGTACGT"]],
-    ["ACTAG", []]
+    ["ACTAAAG", []]
 ];
 
 // Iterate through test cases and check if the function produces the expected output
 testCases.forEach(([input, expectedOutput], index) => {
-    const result = findRepeatedDnaSequences(input);
+    const result = dnaSequence(input);
     console.log(`Test case ${index + 1}:`);
     console.log(`Input: ${input}`);
     console.log(`Expected output: ${JSON.stringify(expectedOutput)}`);
